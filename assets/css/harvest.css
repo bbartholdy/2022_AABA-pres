@@ -68,10 +68,10 @@ blockquote {
   border-bottom: 1px solid #88ac82;
 }
 .remark-slide-content {
-  /*background-image: url(../img/plantagonewtinygreen.svg);*/
+  /*background-image: url(../img/plantagonewtinygreen.svg);
   background-position: 2% 98%;
-  background-size: 50px;
-  font-size: 22pt;
+  background-size: 50px;*/
+  font-size: 20pt;
 }
 .remark-slide table thead th { 
   border-bottom: 1px solid #eee;

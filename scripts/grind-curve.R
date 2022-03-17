@@ -4,14 +4,25 @@ options(ggplot2.discrete.colour = function() scale_colour_viridis_d(),
         ggplot2.continuous.colour = function() scale_colour_viridis_c())
 
 # set a consistent theme across plots
-capapres_theme <- theme(panel.background = element_rect(fill = "transparent", colour = NA),
+harvest_theme <- theme(panel.background = element_rect(fill = "transparent", colour = NA),
                         plot.background = element_rect(fill = "transparent", colour = NA),
-                        panel.grid = element_line(colour = "#88AC82", size = 0.2), # gridlines matching slides colour
-                        panel.border = element_blank()) 
+                        panel.grid.major = element_line(colour = "#88AC82", size = 0.1),
+                        axis.ticks = element_line(colour = "#88AC82", size = 0.1),
+                        panel.border = element_blank(),
+                        axis.title = element_text(family = "serif", size = 16),
+                        legend.key = element_rect(fill = "transparent", colour = "transparent")) 
+
+# harvest_theme <- theme(panel.background = element_rect(fill = "transparent", colour = NA),
+#                         plot.background = element_rect(fill = "transparent", colour = NA),
+#                         panel.border = element_blank(),
+#                         panel.grid.major = element_line(colour = "#88AC82", size = 0.1),
+#                         #plot.margin = element_line(colour = "#88AC82"),
+#                         axis.title = element_text(family = "serif", size = 16))
 
 grind_data_raw <- readr::read_csv2("data/grind-curve.csv")
 
 grind_data <- grind_data_raw %>%
+  filter(Sample != "Synthetic") %>%
   mutate(day = stringr::str_extract(Sample, "[0-9*?]."),
          grind = stringr::str_extract(Sample, "[a-f]$"),
          Sample = if_else(str_detect(Sample, "F"), "Artificial calculus", Sample),
@@ -27,7 +38,7 @@ grind_data %>%
     labs(col = "Sample", shape = "Sample",
          x = "FWHM of the 1035 peak",
          y = "Splitting factor") +
-    capapres_theme
+    harvest_theme
     #scale_color_viridis_d()
 
 # isolate artificial samples to see diffs between days
@@ -41,7 +52,7 @@ grind_data %>%
   labs(col = "Sample", shape = "Sample",
        x = "FWHM of the 1035 peak",
        y = "Splitting factor") +
-  capapres_theme
+  harvest_theme
 #scale_color_viridis_d()
 
 
