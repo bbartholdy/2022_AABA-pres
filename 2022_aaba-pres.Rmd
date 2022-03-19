@@ -2,7 +2,7 @@
 title: "The Real Deal? Validation of a Dental Calculus Model Using FTIR"
 subtitle: ""
 author: |
-  Bjorn Peare Bartholdy, Shira Gur-Arieh, Amanda G. Henry
+  Bjørn Peare Bartholdy, Shira Gur-Arieh, Amanda G. Henry
 institute: "Leiden University"
 date: "2016/12/12 (updated: `r Sys.Date()`)"
 params:
@@ -42,7 +42,7 @@ ftir_samples <- readr::read_csv(here("data", "FTIR_samples.csv"))
 
 ## `r rmarkdown::metadata$subtitle`
 
-### `r rmarkdown::metadata$author`
+#### `r rmarkdown::metadata$author`
 
 #### `r params$event` | `r params$date`
 
@@ -57,7 +57,7 @@ class: middle
 
 ## Open Science Statement
 
-Slides available:  
+Slides available: <https://bbartholdy.github.io/2022_AABA-pres/2022_aaba-pres.html#1>  
 Protocols available: <https://www.protocols.io/workspaces/byoc>  
 Code available: <https://github.com/bbartholdy/2022_AABA-pres>
 
@@ -90,7 +90,7 @@ Dental plaque is an example of an oral biofilm.
 
 ---
 background-image: url(assets/img/biofilm_formation.png)
-background-size: 80%
+background-size: 70%
 ---
 .left[
 ## Biofilm models
@@ -300,7 +300,7 @@ summary_tbl_out <- summary_tbl %>%
 .pull-left[
 ## FTIR analysis
 
-`r dim(ftir_samples)[1]` samples of synthetic dental calculus
+23 samples of synthetic dental calculus
 
 sampled on days 7, 12, 16, 20, 24
 
